@@ -71,7 +71,6 @@ __get_download_domain(){
 }
 
 DOWNLOAD_DOMAIN=$(__get_download_domain)
-
 BUILD_PATH=$(dirname "${BASH_SOURCE[0]}")/../../..
 
 readonly BUILD_PATH
