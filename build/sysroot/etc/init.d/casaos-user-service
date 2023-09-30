@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+: ${app_management_config:=/etc/casaos/user-service.conf}
+
+description="CasaOS User Service"
+command="/usr/bin/casaos-user-service"
+command_args="-c $app_management_config"
+required_files=$app_management_config
+pidfile="/var/run/casaos/user-service.pid"
+supervisor="supervise-daemon"
+
+depend() {
+	need casaos-message-bus
+}
